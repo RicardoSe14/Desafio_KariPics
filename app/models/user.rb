@@ -5,7 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   enum :role, [:normal_user, :admin]
-
+  has_many :reactions
   has_many :comments
+  has_many :articles, through: :reactions
   has_many :articles, through: :comments
 end

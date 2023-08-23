@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: %i[ show edit update destroy ] do
-    authorize_request(["admin"])
-
+  before_action :set_comment, only: %i[ show new edit update destroy ] 
+  before_action only: [:edit, :update, :destroy] do
+  authorize_request(["admin"])
 end
 
   # GET /comments or /comments.json
@@ -11,6 +11,7 @@ end
 
   # GET /comments/1 or /comments/1.json
   def show
+
   end
 
   # GET /comments/new
@@ -67,8 +68,9 @@ end
       @comment = Comment.find(params[:id])
     end
 
+
     # Only allow a list of trusted parameters through.
     def comment_params
-      params.require(:comment).permit(:content, :article_id, :user_id)
+      params.require(:comment).permit(:content, :article_id, :user_id) 
     end
 end

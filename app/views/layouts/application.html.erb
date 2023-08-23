@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TheRialNews</title>
+    <title>Crazy4cats</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,9 +10,23 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class= "container">
+  <body class= "cuerpo">
 
 
-    <%= yield %>
+<div>
+  <div>  
+      <%= render 'shared/menu' %>
+  </div>
+   <div class="container">
+      <%= yield %>
+  </div>
+
+    <div class="container">  
+      <%= render 'shared/footer' %>
+  </div>
+
+ </div>
+  
+   <script src="https://kit.fontawesome.com/360cd4ba7a.js" crossorigin="anonymous"></script>
   </body>
 </html>

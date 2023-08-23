@@ -11,17 +11,17 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
 
+  <div class="pb-4">
+  <%= form.file_field :images, multiple: true, class: 'form-control' %>
+  </div>
+  
   <div>
-    <%= form.label :description, style: "display: block" %>
+    <%= form.label :descripción, style: "display: block" %>
     <%= form.text_field :description %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="pt-4">
+    <%= form.submit "Guardar los cambios" %>
   </div>
 <% end %>

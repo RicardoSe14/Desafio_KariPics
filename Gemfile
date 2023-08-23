@@ -74,3 +74,11 @@ end
 gem "devise", "~> 4.9"
 
 gem "figaro", "~> 1.2"
+
+gem "activestorage", "~> 7.0"
+
+gem "bootstrap", "~> 5.3"
+
+gem "jquery-rails", "~> 4.6"
+
+gem "popper_js", "~> 2.11"

@@ -1,12 +1,15 @@
 <div id="<%= dom_id article %>">
-  <p class="titulo">
-    <strong></strong>
-    <%= article.title %>
-  </p>
 
-  <p>
+    <div>
+  <%= image_tag article.images[0], class: 'row card-img-top' %>
+  </div>
+
+  <p  class="titulo">
     <strong></strong>
     <%= article.description %>
   </p>
 
 </div>
+
+
+

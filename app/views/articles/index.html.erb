@@ -1,18 +1,32 @@
-<div class="navbar">
-<%= button_to "login",'/users/sign_in'%>
-<%= button_to "logout", destroy_user_session_path, method: :delete  %>
-</div>
+<div class="blanco" >
 <p style="color: green"><%= notice %></p>
 
-<h1>FakeNews</h1>
+
+<h1 id="blanco">#Ultimas historias</h1>
+<p> INSTRUCCIONES: Cualquier persona que este registrada puede subir una historia y reaccionar, pero solo los adminitradores pueden eliminar historias y comentarios. Cualquier persona aunque no este registrada puede comentar. Para crear un adminitrador usar rails c User.create email: 'pruebarubyrserra@gmail.com', password: 'admin1234', password_confirmation: 'admin1234', name:'Rick', lastname:'s', nickname: 'olp', role: 'admin';
+
 
 <div id="articles" class="pt-3">
   <% @articles.each do |article| %>
     <%= render article %>
     <p>
-      <%= link_to "Show this article", article %>
+      <%= link_to "Ver comentarios", article %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New article", new_article_path %>
+<div class="boton">
+
+
+ <a class="nav-link" href="/articles/new"><img src="<%= asset_path 'boton' %>" class="w-10" alt="boton +"></a>
+
+</div>
+
+<div class="boton2">
+
+
+ <a class="nav-link" href="#blanco"><img src="<%= asset_path 'arriba' %>" class="w-10" alt="boton arriba"></a>
+
+</div>
+
+</div>
