@@ -2,25 +2,18 @@
 <p style="color: green"><%= notice %></p>
 
 
-<h1 id="blanco">#Ultimas historias</h1>
-<p> INSTRUCCIONES: Cualquier persona que este registrada puede subir una historia y reaccionar, pero solo los adminitradores pueden eliminar historias y comentarios. Cualquier persona aunque no este registrada puede comentar. Para crear un adminitrador usar rails c User.create email: 'pruebarubyrserra@gmail.com', password: 'admin1234', password_confirmation: 'admin1234', name:'Rick', lastname:'s', nickname: 'olp', role: 'admin';
+<h1 id="blanco">#Ultimos viajes</h1>
+<p> INSTRUCCIONES: Cualquier persona que este registrada puede comentar y reaccionar, pero solo los adminitradores pueden subir y eliminar historias y comentarios. Para crear un adminitrador usar rails c User.create email: 'pruebarubyrserra@gmail.com', password: 'admin1234', password_confirmation: 'admin1234', name:'Rick', lastname:'s', nickname: 'olp', role: 'admin';
 
 
-<div id="articles" class="pt-3">
+<div id="articles" class="pt-3 row">
   <% @articles.each do |article| %>
-    <%= render article %>
-    <p>
-      <%= link_to "Ver comentarios", article %>
-    </p>
+  <div class="col-md-6 col-lg-6 col-xl-6"> 
+    <%= render article%>
+  </div>
   <% end %>
 </div>
 
-<div class="boton">
-
-
- <a class="nav-link" href="/articles/new"><img src="<%= asset_path 'boton' %>" class="w-10" alt="boton +"></a>
-
-</div>
 
 <div class="boton2">
 

@@ -37,6 +37,11 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
+
+  <div class="pb-4">
+    <%= f.file_field :images, multiple: true, class: 'form-control' %>
+  </div>
+
   <div class="actions pt-4 pb-3">
     <%= f.submit "Registrate" %>
   </div>

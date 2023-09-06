@@ -1,10 +1,10 @@
 <div id="<%= dom_id article %>">
 
-    <div>
-  <%= image_tag article.images[0], class: 'row card-img-top' %>
+  <div class="imagena">
+  <%= link_to (image_tag (article.images[0]), class:"col-md-12 col-lg-12 col-xl-12 miniatura2"), article%>
   </div>
 
-  <p  class="titulo">
+  <p  class="titulo text-center pt-4">
     <strong></strong>
     <%= article.description %>
   </p>

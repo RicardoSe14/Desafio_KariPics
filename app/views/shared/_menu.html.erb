@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-sm bg-light container-fluid">
   <div class="container">
-    <a class="navbar-brand" href="/">Crazy4Cats</a>
+    <a class="navbar-brand" href="/">KariPics</a>
       <ul class="navbar-nav">
         <% if user_signed_in? %>
           <li class="nav-item">
@@ -12,12 +12,19 @@
             <a class="nav-link" href="/users/edit">Editar Perfil</a>
           </li>
           <li class="nav-item ">
+           <a class="nav-link" href="/articles/new">Nueva historia</a>
+           </li>
+          <li class="nav-item ">
             <%= button_to 'Cerrar sesión' , destroy_user_session_path, class: 'nav-link ps-3' , method: :delete %>
           </li>
+
             <%else%>
                 <li class="nav-item">
                 <%= link_to 'Iniciar sesión' , new_user_session_path, class: 'nav-link'%>
               </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/users/sign_up">Registrate</a>
+          </li>
             <%end%>
       </ul>
     </div>

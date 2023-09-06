@@ -1,12 +1,15 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: %i[ show new edit update destroy ] 
-  before_action only: [:edit, :update, :destroy] do
-  authorize_request(["admin"])
-end
+  before_action :set_comment, only: %i[ show edit update destroy]
+  before_action only: [:new, :create, :destroy, :edit, :update] do
+    authorize_request(["normal_user", "admin"])
+  end
 
   # GET /comments or /comments.json
   def index
     @comments = Comment.all
+    puts
+    puts @comments
+    puts
   end
 
   # GET /comments/1 or /comments/1.json
@@ -28,6 +31,9 @@ end
     @article = Article.find(params[:comment][:article_id])
     @comment = Comment.new(comment_params)
     @comment.user = current_user
+    puts
+    puts @comment
+    puts
     respond_to do |format|
     if @comment.save
     format.html { redirect_to article_path(@article.id), notice:
@@ -71,6 +77,6 @@ end
 
     # Only allow a list of trusted parameters through.
     def comment_params
-      params.require(:comment).permit(:content, :article_id, :user_id) 
+      params.require(:comment).permit(:content, :article_id, :user_id, images:[]) 
     end
 end

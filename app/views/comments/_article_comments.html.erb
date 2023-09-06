@@ -4,9 +4,26 @@
 <div class="col-lg-12 col-xl-12 col-xxl-12 col-md-12 btn btn-light text-right justify-content-md-end d-md-flex" id="editar">
 <%= button_to "X", comment, method: :delete %>
 </div>
+
+<div>
+
+<div class="username" >
+    <div class="d-inline">
+        <% if comment.user.images.present? %>
+        <%= image_tag comment.user.images[0], class: 'rounded-circle miniatura' %>
+        <% else %>
+        <%= image_tag ('sinfoto.jpg'), class: 'rounded-circle miniatura' %>
+        <% end %>
+    </div>
+    <div class="textcomment d-inline">
+        <%= "@#{comment.user.nickname}" %>
+    </div>
+</div>
+
 <div class="textcomment">
 <%= comment.content %>
 </div>
+
 </p>
 <% end %>
 </div>

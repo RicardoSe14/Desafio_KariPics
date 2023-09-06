@@ -11,18 +11,15 @@ class ReactionsController < ApplicationController
             comment_id: @comment.id) : reaction_article = Reaction.find_by(user_id: @user.id,
             article_id: @article.id)
             if reaction_article || reaction_comment
-            format.html { redirect_to article_path(@article), notice: 'You already reacted
-            to this article' }
+            format.html { redirect_to article_path(@article), notice: 'Ya reaccionaste a esta historia' }
             else
             (@type == "article") ? @reaction = Reaction.new(user_id: @user.id, article_id:
             @article.id, reaction_type: @type, kind: @kind) : @reaction = Reaction.new(user_id:
             @user.id, comment_id: @comment.id, reaction_type: @type, kind: @kind)
             if @reaction.save!
-            format.html { redirect_to article_path(@article), notice: 'Reaction was
-            successfully created.' }
+            format.html { redirect_to article_path(@article), notice: 'Gracias por reacionar 😉' }
             else
-            format.html { redirect_to article_path(@article), notice: 'Something went
-            wrong' }
+            format.html { redirect_to article_path(@article), notice: 'Algo fue mal' }
             end
             end
         end

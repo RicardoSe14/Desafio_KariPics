@@ -1,9 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: %i[ show edit update destroy]
-  before_action only: [:new, :create] do
-    authorize_request(["normal_user","admin"])
-  end
-  before_action only: [:destroy, :edit, :update] do
+  before_action only: [:new, :create, :destroy, :edit, :update] do
     authorize_request(["admin"])
   end
 
